@@ -1,0 +1,15 @@
+# Live Video Streaming
+import cv2
+cap = cv2.VideoCapture(0)
+
+while True:
+    status, photo = cap.read()
+    cv2.imshow("my photo", photo)
+    
+    #100 here is millisecond
+    # 13 : enter key
+    if cv2.waitKey(100) == 13:
+        break
+    
+cv2.destroyAllWindows()
+cap.release()
